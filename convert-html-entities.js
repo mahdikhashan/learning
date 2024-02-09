@@ -1,16 +1,15 @@
-function convertHTML(str) {
-  const signMap = new Map()
-  signMap.set("&", "&amp;")
-  signMap.set("<", "&lt;")
-  signMap.set(">", "&gt;")
-  signMap.set('"', "&quot;")
-  signMap.set("'", "&apos;")
-  
+function convertHTML(str) {  
   return str
     .split("")
     .reduce(
       (arr, char) => {
-        const key = signMap.get(char) ?? char
+        const key = ({
+          "&": "&amp;",
+          "<": "&lt;",
+          ">": "&gt;",
+          '"': "&quot;",
+          "'": "&apos;"
+        })[char] ?? char
         return [...arr, key]
       }
     , [])
