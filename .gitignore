@@ -1,1 +1,3 @@
-.idea/
+# local folders
+/.idea/
+/lib/
