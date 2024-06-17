@@ -1,0 +1,90 @@
+<style type="text/css">
+  section {
+    display: flex;
+    flex-direction: column;
+    gap: 1ch;
+  }
+  div {
+    display: flex;
+    gap: 2ch;
+  }
+
+  button {
+    display: flex;
+    align-items: center;
+  }
+  button:has(.icon) {
+    gap: 2ch;
+  }
+
+  .icon {
+    width: 1em;
+  }
+
+  .card {
+    display: grid;
+    height: 200px;
+    gap: 10px;
+
+    grid-template: repeat(4, 1fr) / repeat(2, 1fr);
+
+    padding: 2em;
+
+    border: 1px solid black;
+  }
+
+  .card:has(img) {
+    grid-auto-flow: row;
+  }
+
+  #item1 {
+    background-color: lime;
+    grid-row-start: 3;
+  }
+
+  #item2 {
+    background-color: yellow;
+  }
+
+  #item3 {
+    background-color: blue;
+  }
+
+  #item4 {
+    grid-column-start: 2;
+    background-color: red;
+  }
+
+  #item5 {
+    background-color: aqua;
+  }
+</style>
+
+<section>
+  <div>
+    <button>
+      <img class="icon" src="./icon-heart.png" alt="button-icon" />
+      <span> My Button </span>
+    </button>
+
+    <button>
+      <span> My Long Button </span>
+    </button>
+  </div>
+
+  <div class="card">
+    <img src="./icon-message-animated.gif" alt="card-with-message-icon" />
+    <div class="card-body">
+      Lorem ipsum, dolor sit amet consectetur adipisicing elit. Laborum nesciunt
+      repellat facere dolor, recusandae culpa quas tempora vero nam perferendis
+      dolore, ab nulla blanditiis dolorem pariatur animi eligendi ipsum
+      doloremque.
+    </div>
+
+    <div id="item1"></div>
+    <div id="item2"></div>
+    <div id="item3"></div>
+    <div id="item4"></div>
+    <div id="item5"></div>
+  </div>
+</section>
