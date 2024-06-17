@@ -1,0 +1,14 @@
+name: E2E Test
+on:
+  push: null
+  schedule:
+    - cron: "0 12 * * *"
+jobs:
+  e2e-test:
+    runs-on: ubuntu-20.04
+    steps:
+      - uses: actions/checkout@v3
+      - run: npm i
+      - uses: cypress-io/github-action@v4
+        with:
+          browser: chrome
