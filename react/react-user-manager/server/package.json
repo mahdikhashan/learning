@@ -1,0 +1,21 @@
+{
+  "name": "@user-manager/server",
+  "version": "1.0.0",
+  "main": "server.cjs",
+  "author": "Mahdi Khashan",
+  "license": "MIT",
+  "private": true,
+  "scripts": {
+    "start": "node server.cjs",
+    "json-server": "json-server --watch db.json",
+    "start-server": "node server.cjs"
+  },
+  "dependencies": {
+    "express": "latest",
+    "@user-manager/config": "1.0.0",
+    "express-fileupload": "latest",
+    "body-parser": "latest",
+    "morgan": "latest",
+    "lodash": "latest"
+  }
+}

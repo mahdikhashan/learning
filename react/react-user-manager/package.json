@@ -1,0 +1,22 @@
+{
+  "name": "user-manager",
+  "version": "1.0.0",
+  "repository": "https://github.com/mahdikhashan/react-user-management.git",
+  "author": "Mahdi Khashan <mahdikhashan1@gmail.com>",
+  "license": "MIT",
+  "private": true,
+  "workspaces": [
+    "client",
+    "server",
+    "packages/*",
+    "packages/hooks/*"
+  ],
+  "scripts": {
+    "start-server": "yarn --cwd server start",
+    "build-client": "yarn --cwd client build",
+    "start-client": "yarn --cwd client dev",
+    "start-storybook": "yarn --cwd client storybook",
+    "storybook": "yarn --cwd client start-storybook -p 6006",
+    "build-storybook": "yarn -cwd client build-storybook"
+  }
+}
