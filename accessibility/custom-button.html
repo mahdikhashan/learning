@@ -1,0 +1,17 @@
+<form onsubmit="return console.log('submit event occured')">
+  <my-button>first button</my-button>
+  <my-button>second button</my-button>
+  <my-button>third button</my-button>
+  <my-button2 role="button" tabindex="0">my first button</my-button2>
+  <my-button2 role="button" tabindex="0">my second button</my-button2>
+  <my-button2 role="button" tabindex="0" onclick="return alert('here you clicked')">my third button</my-button2>
+  <button>button in the dom</button>
+</form>
+<script>
+  customElements.define('my-button', class extends HTMLElement {
+    connectedCallback() {
+      this.attachShadow({ mode: 'open' }).innerHTML = `<button>Button In Shadow DOM</button>`
+      this.onclick = _ => this.closest('FORM').dispatchEvent(new Event('submit'))
+    }
+  })
+</script>

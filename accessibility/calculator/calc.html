@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>ARIA - Calculator</title>
+    <link type="text/css" href="css/style.css" rel="stylesheet">
+
+    <script>
+        var isDecimal = false;
+        var isOperator = false;
+        
+        // array of all keys in the calculator
+        var keys = ["=", "-", "+", "1", "2", "3", "4", "5", "6", "7", "8", "9", "0", "/", "*", "."];
+
+        // set an event listener for each key down event
+        document.addEventListener("keydown", function(e) {
+            input(e.key);
+        })
+
+        function input(value){
+
+            var updateScreen = false;
+            switch(value){
+                case "c":
+                    clearScreen();
+                    break;
+                case "=":
+                    calculate();
+                    return;
+                    break;
+                case '.':
+                    if(isDecimal){
+                        return;
+                    }
+                    isDecimal = true;
+                    updateScreen = true;
+                    break;
+                case "+":
+                case "-":
+                case "*":
+                case "/":
+                    if(isOperator){
+                        return;
+                    }
+                    isOperator = true;
+                    isDecimal = false;
+                    updateScreen = true;
+                    break;
+                default:
+                    isOperator = false;
+                    updateScreen = true;
+
+            }
+
+            if(
+                updateScreen &&
+                keys.includes(value)
+            ){
+                var screen = document.querySelector('.screen');
+                screen.innerHTML += value;
+            }
+
+        }
+
+        function calculate(){
+            var screen = document.querySelector('.screen');
+            var equation = screen.innerHTML;
+            var lastChar = equation[equation.length - 1];
+
+            var operators = ['+', '-', '*', '/'];
+            if(operators.indexOf(lastChar) > -1 || lastChar === '.')
+                equation = equation.replace(/.$/, '');
+
+            if(equation)
+                screen.innerHTML = eval(equation);
+
+        }
+
+        function clearScreen(){
+            var screen = document.querySelector('.screen');
+            screen.innerHTML = '';
+            isDecimal = false;
+            isOperator = false;
+
+        }
+
+    </script>
+</head>
+<body>
+
+<div id="calculator">
+    <!-- Screen and clear key -->
+    <div class="top">
+        <span class="clear" onclick="input('c')" tabindex="0" role="button">C</span>
+        <div class="screen"></div>
+    </div>
+
+    <div class="keys">
+        <!-- operators and other keys -->
+        <span onclick="input('7')" tabindex="0" role="button">7</span>
+        <span onclick="input('8')" tabindex="0" role="button">8</span>
+        <span onclick="input('9')" tabindex="0" role="button">9</span>
+        <span class="operator" onclick="input('+')" tabindex="0" role="button">+</span>
+
+        <span onclick="input('4')" tabindex="0" role="button">4</span>
+        <span onclick="input('5')" tabindex="0" role="button">5</span>
+        <span onclick="input('6')" tabindex="0" role="button">6</span>
+        <span class="operator" onclick="input('-')" tabindex="0" role="button">-</span>
+
+        <span onclick="input('1')" tabindex="0" role="button">1</span>
+        <span onclick="input('2')" tabindex="0" role="button">2</span>
+        <span onclick="input('3')" tabindex="0" role="button">3</span>
+        <span class="operator" onclick="input('/')" tabindex="0" role="button">/</span>
+
+        <span onclick="input('0')" tabindex="0" role="button">0</span>
+        <span onclick="input('.')" tabindex="0" role="button">.</span>
+        <span class="eval" onclick="input('=')" tabindex="0" role="button">=</span>
+        <span class="operator" onclick="input('*')" tabindex="0" role="button">*</span>
+    </div>
+</div>
+
+</body>
+</html>

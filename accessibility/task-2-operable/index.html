@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Table and Form Accessibility</title>
+    <style type="text/css">
+        .visuallyhidden {
+            visibility: hidden;
+        }
+    </style>
+</head>
+<body>
+
+<div>
+    <img src="img/logo_is.png" alt="Logo Institut Integriert Studieren"/>
+    <h1>Example 1: Accessible Table</h1>
+    <p>The table below is not accessible - it is your task to make it accessible by:</p>
+    <ol>
+        <li>Identifying the cells which are row and column headers.</li>
+        <li>At the identified cells, using the table header element (th) to replace the table data element (td) to
+            define the headers of rows and columns.
+        </li>
+        <li>Use scope="row" or scope="col" inside the &lt;th&gt; element (e.g. &lt;th scope="col"/&gt;) to make clear if
+            it is a row or column header.
+        </li>
+    </ol>
+</div>
+
+<table>
+    <caption>List of colleagues</caption>
+    <thead>
+        <tr>
+            <th></th>
+            <th scope="col">Office 1</th>
+            <th scope="col">Office 2</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <th scope="row">First name:</th>
+            <td>Joe</td>
+            <td>Maria</td>
+        </tr>
+        <tr>
+            <th scope="row">Surname:</th>
+            <td>Mayer</td>
+            <td>Bush</td>
+        </tr>
+        <tr>
+            <th scope="row">Title:</th>
+            <td>-</td>
+            <td>PHD</td>
+        </tr>
+        <tr>
+            <th scope="row">Phone:</th>
+            <td>+43 1 234567</td>
+            <td>+34 9 876543</td>
+        </tr>
+        <tr>
+            <th scope="row">Mail:</th>
+            <td>joe.mayer@test.org</td>
+            <td>maria.bush@test.org</td>
+        </tr>
+        <tr>
+            <th scope="row">Unit:</th>
+            <td>Sales</td>
+            <td>Accounting</td>
+        </tr>
+    </tbody>
+</table>
+
+<hr>
+
+<div>
+    <img src="img/logo_is.png" alt="Logo Institut Integriert Studieren"/>
+    <h1>Example 2: Accessible Form</h1>
+    <p>The form below is not accessible - it is your task to make it accessible by:</p>
+    <ol>
+        <li>Use the label element to connect the descriptive texts with the form elements</li>
+        <li>Use fieldsets to structure the form</li>
+        <li>Username and password are required inputs. Mark them as required.</li>
+    </ol>
+</div>
+
+<h2>Create New User</h2>
+<form>
+    <label for="username">Username:</label>
+    <input type="text" name="username" required aria-required="username is required"><br>
+    
+    <label for="password">Password:</label>
+    <input type="password" name="password" required id="password"><br>
+
+    <label for="firstname">First Name:</label>
+    <input type="text" name="first_name" id="firstname"><br>
+    
+    <label for="lastname">Last Name:</label>
+    <input type="text" name="surname" id="lastname"><br>
+    
+    <label for="email">Email:</label>
+    <input type="email" name="email" id="email"><br>
+
+    <fieldset>
+        <legend>Gender:</legend><br>
+        <input type="radio" name="gender" checked="checked" value="female">Female<br>
+        <input type="radio" name="gender" value="male">Male<br>
+    </fieldset>
+
+    <fieldset>
+        <legend>Birthday:</legend>
+        <input type="date" id="field_birthday"><br>
+    </fieldset>
+    
+    <fieldset>
+        <legend>Country:</legend>
+        <select id="field_country">
+            <option>Austria</option>
+            <option>Germany</option>
+            <option>Other...</option>
+        </select><br>
+    </fieldset>
+
+    <label for="zipcode">ZIP-Code:</label>
+    <input type="text" name="zip-code" id="zipcode"><br>
+    
+    <label for="street">Street:</label>
+    <input type="text" name="street"><br>
+
+    <label for="cv">CV:</label>
+    <input type="file" name="cv"><br>
+
+    <label for="motto">Your personal motto:</label><br>
+    <textarea name="motto" id="motto"></textarea><br>
+
+    <!-- I'm not sure if I need to add a label to it as well or not -->
+    <label for="terms" class="visuallyhidden">Terms and Conditions:</label>
+    <input type="checkbox" name="terms" id="terms"> I agree to the terms and conditions<br>
+    
+    <!-- https://www.w3.org/WAI/tutorials/forms/labels/#note-on-hiding-elements -->
+    <!-- regarding the above link, buttons and types which represent a button include the label in the value attribute so there is no need to add a label -->
+    <input type="submit" value="submit">
+</form>
+</body>
+</html>
