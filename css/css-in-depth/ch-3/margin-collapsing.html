@@ -1,0 +1,144 @@
+<style>
+  /* 
+  :root {
+    box-sizing: border-box;
+  }
+  
+  *,
+  ::before,
+  ::after {
+    box-sizing: inherit;
+  }
+  */
+
+  *,
+  ::before,
+  ::after {
+    box-sizing: border-box;
+  }
+
+  body {
+    background-color: #eee;
+    font-family: Arial, Helvetica, sans-serif;
+  }
+
+  header {
+    color: #fff;
+    background-color: #0072b0;
+    border-radius: 0.5em;
+  }
+
+  .main {
+    display: block;
+    background-color: #fff;
+    border-radius: 0.5em;
+  }
+
+  .content {
+    border: 1px solid gray;
+    height: 500px;
+  }
+
+  .block {
+    display: inline-block;
+  }
+
+  .table-cell {
+    display: table-cell;
+    vertical-align: middle;
+    height: 500px;
+    border: 1px solid gray;
+  }
+
+  .flex-box {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    height: 500px;
+    border: 1px solid gray;
+  }
+
+  .min-height {
+    min-height: 3em;
+  }
+
+  .visible {
+    overflow: visible;
+  }
+
+  .hidden {
+    overflow: hidden;
+  }
+
+  .padding-centring {
+    padding: 2em 0;
+  }
+
+  .colorful {
+    background-color: aquamarine;
+  }
+
+  .single-line-block {
+    height: 3em;
+  }
+
+  .single-line-block p {
+    line-height: 3em;
+    margin: 0;
+    text-align: center;
+  }
+
+  .parent-of-known-height-block {
+    height: 200px;
+
+    position: relative;
+
+    background-color: white;
+  }
+
+  .known-height-block {
+    position: absolute;
+    top: 11px;
+
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+
+    padding: 1em;
+
+    color: black;
+  }
+
+  .content-transform {
+    position: relative;
+    min-height: 500px;
+    border: 1px solid #ccc;
+  }
+
+  .inner-content-for-transform {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: #f00;
+    color: #fff;
+    padding: 10px;
+  }
+</style>
+
+<body>
+  <header>
+    <h1>Franklin Running Club</h1>
+  </header>
+  <div class="container">
+    <main class="main">
+      <h2>Come join us!</h2>
+      <div>
+        <p>
+          The Franklin Running club meets at 6:00pm every Thursday at the town
+          square. Runs are three to five miles, at your own pace.
+        </p>
+      </div>
+    </main>
+  </div>
+</body>

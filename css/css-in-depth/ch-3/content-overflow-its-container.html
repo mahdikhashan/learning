@@ -1,0 +1,88 @@
+<style>
+
+  /* 
+  :root {
+    box-sizing: border-box;
+  }
+  
+  *,
+  ::before,
+  ::after {
+    box-sizing: inherit;
+  }
+  */
+
+  *,
+  ::before,
+  ::after {
+    box-sizing: border-box;
+  }
+
+  body {
+    background-color: #eee;
+    font-family: Arial, Helvetica, sans-serif;
+  }
+
+  header {
+    color: #fff;
+    background-color: #0072b0;
+    border-radius: 0.5em;
+  }
+
+  main {
+    display: flex;
+    flex-direction: column;
+    gap: 3em;
+  }
+
+  .main {
+    float: left;
+    width: 70%;
+    background-color: #fff;
+    border-radius: 0.5em;
+  }
+
+  .content {
+    border: 1px solid gray;
+    height: 50px;
+  }
+
+  .visible {
+    overflow: visible;
+  }
+
+  .hidden {
+    overflow: hidden;
+  }
+
+  .scroll {
+    overflow: scroll;
+  }
+
+  .auto {
+    overflow: auto;
+  }
+  
+</style>
+
+<body>
+  <header>
+    <h1>Franklin Running Club</h1>
+  </header>
+  <div class="container">
+    <main class="main">
+      <div class="content visible">
+        Normal document flow refers to the default layout behavior of elements on the page. Inline elements flow along with the text of the page, from left to right, line wrapping when they reach the edge of their container. Block-level ele- ments fall on individual lines, with a line break above and below.
+      </div>
+      <div class="content hidden">
+        Normal document flow refers to the default layout behavior of elements on the page. Inline elements flow along with the text of the page, from left to right, line wrapping when they reach the edge of their container. Block-level ele- ments fall on individual lines, with a line break above and below.
+      </div>
+      <div class="content scroll">
+        Normal document flow refers to the default layout behavior of elements on the page. Inline elements flow along with the text of the page, from left to right, line wrapping when they reach the edge of their container. Block-level ele- ments fall on individual lines, with a line break above and below.
+      </div>
+      <div class="content auto">
+        Normal document flow refers to the default layout behavior of elements on the page. Inline elements flow along with the text of the page, from left to right, line wrapping when they reach the edge of their container. Block-level ele- ments fall on individual lines, with a line break above and below.
+      </div>
+    </main>
+  </div>
+</body>

@@ -1,0 +1,42 @@
+<style>
+  .awesome {
+    text-transform: uppercase;
+    font-size: 5rem;
+    font-weight: 700;
+    line-height: 1;
+    border: 5px solid;
+    padding: 2rem;
+
+    /* extrinsic width */
+    width: 320px;
+  }
+
+  .awesome[data-sizing="intrinsic"] {
+    width: min-content;
+  }
+
+  .awesome {
+    --flow-space: 2rem;
+  }
+</style>
+
+<div>
+  <label for="intrinsic-switch">
+    <span>Turn on intrinsic sizing</span>
+    <input type="checkbox" role="switch" class="toggle__element" id="intrinsic-switch" />
+  </label>
+  <br />
+  <p class="awesome" data-element="awesome">CSS is awesome</p>
+</div>
+
+<script>
+  const awesome = document.querySelector("[data-element='awesome']");
+  const intrinsicSwitch = document.querySelector("#intrinsic-switch");
+
+  intrinsicSwitch.addEventListener("change", function () {
+    awesome.setAttribute(
+      "data-sizing",
+      intrinsicSwitch.checked ? "intrinsic" : "extrinsic"
+    );
+  });
+</script>

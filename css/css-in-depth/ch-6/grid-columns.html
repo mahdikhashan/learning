@@ -1,0 +1,33 @@
+<style type="text/css">
+  :root {
+    box-sizing: border-box;
+  }
+
+  *,
+  ::after,
+  ::before {
+    margin: 0;
+  }
+
+  .grid {
+    display: grid;
+    grid-gap: 1em;
+  }
+
+  .grid-col {
+    grid-template-columns: 1fr 1fr 1fr;
+  }
+
+  .item {
+    background-color: lightblue;
+    padding: 0.5rem;
+  }
+</style>
+
+<div class="wrapper">
+  <div class="grid grid-col">
+    <div class="grid-item item"> 1 </div>
+    <div class="grid-item item"> 2 </div>
+    <div class="grid-item item"> 3 </div>
+  </div>
+</div>

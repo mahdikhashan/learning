@@ -1,0 +1,56 @@
+<link rel="stylesheet" href="../web-dot-dev.css" />
+<style>
+  .box-demo {
+    width: 400px;
+    height: 400px;
+  }
+
+  .box-demo[data-sizing="intrinsic"] {
+    height: max-content;
+    width: max-content;
+  }
+
+  .box-layout {
+    display: grid;
+    width: max-content;
+    gap: 0.5rem;
+    grid-template-columns: 1fr min-content;
+    background-color: red;
+  }
+</style>
+
+<div>
+  <label for="intrinsic-switch">
+    <span>Turn on intrinsic sizing</span>
+    <input
+      type="checkbox"
+      role="switch"
+      class="toggle__element"
+      id="intrinsic-switch"
+    />
+  </label>
+  <br />
+
+  <div class="box-layout">
+    <div></div>
+    <figure class="box-demo box" data-element="parent-box">
+      <img src="http://source.unsplash.com/CiFaYIvZyyA/800" alt="A purple Petunia flower in close focus" />
+      <figcaption contenteditable>
+        You can edit this text to see how it changes the layout of our box,
+        depending on intrinsic and extrinsic sizing.
+      </figcaption>
+    </figure>
+  </div>
+</div>
+
+<script>
+  const parentBox = document.querySelector("[data-element='parent-box']");
+  const intrinsicSwitch = document.querySelector("#intrinsic-switch");
+
+  intrinsicSwitch.addEventListener("change", function () {
+    parentBox.setAttribute(
+      "data-sizing",
+      intrinsicSwitch.checked ? "intrinsic" : "extrinsic"
+    );
+  });
+</script>

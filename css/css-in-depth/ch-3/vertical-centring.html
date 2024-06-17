@@ -1,0 +1,209 @@
+<style>
+  /* 
+  :root {
+    box-sizing: border-box;
+  }
+  
+  *,
+  ::before,
+  ::after {
+    box-sizing: inherit;
+  }
+  */
+
+  *,
+  ::before,
+  ::after {
+    box-sizing: border-box;
+  }
+
+  body {
+    background-color: #eee;
+    font-family: Arial, Helvetica, sans-serif;
+  }
+
+  header {
+    color: #fff;
+    background-color: #0072b0;
+    border-radius: 0.5em;
+  }
+
+  .main {
+    display: block;
+    background-color: #fff;
+    border-radius: 0.5em;
+  }
+
+  .content {
+    border: 1px solid gray;
+    height: 500px;
+  }
+
+  .block {
+    display: inline-block;
+  }
+
+  .table-cell {
+    display: table-cell;
+    vertical-align: middle;
+    height: 500px;
+    border: 1px solid gray;
+  }
+
+  .flex-box {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    height: 500px;
+    border: 1px solid gray;
+  }
+
+  .min-height {
+    min-height: 3em;
+  }
+
+  .visible {
+    overflow: visible;
+  }
+
+  .hidden {
+    overflow: hidden;
+  }
+
+  .padding-centring {
+    padding: 2em 0;
+  }
+
+  .colorful {
+    background-color: aquamarine;
+  }
+
+  .single-line-block {
+    height: 3em;
+  }
+
+  .single-line-block p {
+    line-height: 3em;
+    margin: 0;
+    text-align: center;
+  }
+
+  .parent-of-known-height-block {
+    height: 300px;
+
+    position: relative;
+
+    background-color: blue;
+  }
+
+  .known-height-block {
+    height: 278px;
+
+    position: absolute;
+    top: 11px;
+
+    display: flex;
+    align-items: center;
+
+    background-color: gray;
+  }
+
+  .content-transform {
+    position: relative;
+    min-height: 500px;
+    border: 1px solid #ccc;
+  }
+
+  .inner-content-for-transform {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: #f00;
+    color: #fff;
+    padding: 10px;
+  }
+</style>
+
+<body>
+  <header>
+    <h1>Franklin Running Club</h1>
+  </header>
+  <div class="container">
+    <main class="main">
+      <div class="parent-of-known-height-block">
+        <div class="known-height-block">
+          Normal document flow refers to the default layout behavior of elements
+          on the page. Inline elements flow along with the text of the page,
+          from left to right, line wrapping when they reach the edge of their
+          container. Block-level ele- ments fall on individual lines, with a
+          line break above and below. Normal document flow refers to the default
+          layout behavior of elements on the page. Inline elements flow along
+          with the text of the page, from left to right, line wrapping when they
+          reach the edge of their container. Block-level ele- ments fall on
+          individual lines, with a line break above and below. Normal document
+          flow refers to the default layout behavior of elements on the page.
+          Inline elements flow along with the text of the page, from left to
+          right, line wrapping when they reach the edge of their container.
+          Block-level ele- ments fall on individual lines, with a line break
+          above and below.
+        </div>
+      </div>
+      <div class="flex-box hidden">
+        <h1>Flex Box</h1>
+        Normal document flow refers to the default layout behavior of elements
+        on the page. Inline elements flow along with the text of the page, from
+        left to right, line wrapping when they reach the edge of their
+        container. Block-level elements fall on individual lines, with a line
+        break above and below.
+      </div>
+      <div class="table-cell">
+        <h1>Table Cell</h1>
+        Normal document flow refers to the default layout behavior of elements
+        on the page. Inline elements flow along with the text of the page, from
+        left to right, line wrapping when they reach the edge of their
+        container. Block-level ele- ments fall on individual lines, with a line
+        break above and below. Normal document flow refers to the default layout
+        behavior of elements on the page. Inline elements flow along with the
+        text of the page, from left to right, line wrapping when they reach the
+        edge of their container. Block-level ele- ments fall on individual
+        lines, with a line break above and below. Normal document flow refers to
+        the default layout behavior of elements on the page. Inline elements
+        flow along with the text of the page, from left to right, line wrapping
+        when they reach the edge of their container. Block-level ele- ments fall
+        on individual lines, with a line break above and below.
+      </div>
+      <div class="block content padding-centring">
+        <div class="colorful">
+          <h1>Padding Centring</h1>
+          Normal document flow refers to the default layout behavior of elements
+          on the page. Inline elements flow along with the text of the page,
+          from left to right, line wrapping when they reach the edge of their
+          container. Block-level ele- ments fall on individual lines, with a
+          line break above and below.
+        </div>
+      </div>
+      <div class="content single-line-block">
+        <p>single line block</p>
+      </div>
+      <div class="content-transform">
+        <div class="inner-content-for-transform">
+          Normal document flow refers to the default layout behavior of elements
+          on the page. Inline elements flow along with the text of the page,
+          from left to right, line wrapping when they reach the edge of their
+          container. Block-level ele- ments fall on individual lines, with a
+          line break above and below. Normal document flow refers to the default
+          layout behavior of elements on the page. Inline elements flow along
+          with the text of the page, from left to right, line wrapping when they
+          reach the edge of their container. Block-level ele- ments fall on
+          individual lines, with a line break above and below. Normal document
+          flow refers to the default layout behavior of elements on the page.
+          Inline elements flow along with the text of the page, from left to
+          right, line wrapping when they reach the edge of their container.
+          Block-level ele- ments fall on individual lines, with a line break
+          above and below.
+        </div>
+      </div>
+    </main>
+  </div>
+</body>

@@ -1,0 +1,28 @@
+<html lang="en">
+  <head>
+    <title>Box model and border-box sizing</title>
+    <style type="text/css">
+      .content-box {
+        box-sizing: content-box;
+        background-color: green;
+      }
+
+      .border-box {
+        box-sizing: border-box;
+        background-color: red;
+      }
+
+      .inside-content {
+        border: 0.25rem solid black;
+        padding: 0.5rem;
+        margin: 1.0rem;
+        width: 5rem;
+        height: 5rem;
+      }
+    </style>
+  </head>
+  <body style="display: flex; flex-direction: column; gap: 1rem">
+    <div class="content-box inside-content">content-box</div>
+    <div class="border-box inside-content">border-box</div>
+  </body>
+</html>

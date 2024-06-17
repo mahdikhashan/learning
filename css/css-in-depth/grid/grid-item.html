@@ -1,0 +1,55 @@
+<style type="text/css">
+  :root {
+    --color-background: gray;
+    --color-primary: blue;
+    --color-secondary: red;
+
+    box-sizing: border-box;
+    margin: 0;
+  }
+
+  *,
+  ::after,
+  ::before {
+    box-sizing: border-box;
+    margin: 0;
+  }
+
+  .container {
+    display: grid;
+    /* three columns tracks */
+    /* each track uses a different length unit */
+    grid-template-columns: 5em 100px 30%;
+    /* two row tracks */
+    grid-template-rows: 200px auto;
+    gap: 10px;
+
+    background-color: var(--color-background);
+  }
+
+  .item:nth-child(2n+1) {
+    background-color: var(--color-secondary);
+  }
+
+  .item:nth-child(2n+2) {
+    background-color: var(--color-primary);
+  }
+</style>
+
+<div class="container">
+  <div class="item">
+    Item one
+  </div>
+  <div class="item">
+    Item two
+  </div>
+  <div class="item">
+    Item three
+  </div>
+  <div class="item">
+    Item four
+  </div>
+  <div class="item">
+    Item five
+  </div>
+</div>

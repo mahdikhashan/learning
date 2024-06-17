@@ -1,0 +1,30 @@
+<style type="text/css">
+  :root {
+    box-sizing: border-box;
+  }
+
+  *,
+  ::before,
+  ::after {
+    margin: 0;
+  }
+
+  .grid {
+    display: grid;
+    grid-gap: 2em;
+  }
+
+  .grid-col {
+    grid-template-columns: 300px 1fr;
+  }
+  .grid-item {
+    background-color: red;  
+  }
+</style>
+
+<div class="wrapper">
+  <div class="grid">
+    <div class="grid-item"> Sidebar </div>
+    <div class="grid-item"> Main </div>
+  </div>
+</div>
