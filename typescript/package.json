@@ -1,0 +1,16 @@
+{
+  "name": "typescript",
+  "version": "1.0.0",
+  "description": "",
+  "type": "commonjs",
+  "main": "index.js",
+  "scripts": { 
+    "build": "tsc",
+    "start-server:global-interface-merging": "npx http-server ./global-interface-merging"
+  },
+  "author": "Mahdi Khashan",
+  "license": "ISC",
+  "dependencies": {
+    "typescript": "^5.2.2"
+  }
+}
