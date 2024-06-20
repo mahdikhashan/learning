@@ -1,3 +1,16 @@
+<!--A working HTML/JS calculator can be found in the file "calc.html". However it is not accessible. In this assignment it is your task to make it accessible. In order to do this you will have to:-->
+
+<!--Change the colour of the calculator with CSS so that the contrast is high enough-->
+<!--Make the calculator be operable via keyboard interface with correct tab-index and a keyboard listener-->
+<!--Add a style for focused calculator buttons-->
+<!--Assign proper ARIA labels to UI Elements-->
+<!--Assign proper ARIA roles to the calculator buttons-->
+<!--Assign proper ARIA attributes(live-region) to the display so that people with Screenreaders get feedback when they input something-->
+<!--Use moodle to upload your zipped source-files-->
+<!--To complete this task use:-->
+
+<!--NVDA: To test if the calculator works for blind people.-->
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -12,6 +25,7 @@
         // array of all keys in the calculator
         var keys = ["=", "-", "+", "1", "2", "3", "4", "5", "6", "7", "8", "9", "0", "/", "*", "."];
 
+        // I also added a functionality to interact with keypad, numbers and other symbols
         // set an event listener for each key down event
         document.addEventListener("keydown", function(e) {
             input(e.key);
@@ -49,7 +63,6 @@
                 default:
                     isOperator = false;
                     updateScreen = true;
-
             }
 
             if(
@@ -59,7 +72,6 @@
                 var screen = document.querySelector('.screen');
                 screen.innerHTML += value;
             }
-
         }
 
         function calculate(){
@@ -73,7 +85,6 @@
 
             if(equation)
                 screen.innerHTML = eval(equation);
-
         }
 
         function clearScreen(){
@@ -81,41 +92,47 @@
             screen.innerHTML = '';
             isDecimal = false;
             isOperator = false;
-
         }
-
     </script>
 </head>
 <body>
 
+<!-- README -->
+<!-- the span elements are not normally focusable; hence, i would prefer to replace them with buttons instead of -->
+<!-- assigning a key event listener to existing elements if it was not for exercise -->
 <div id="calculator">
     <!-- Screen and clear key -->
     <div class="top">
-        <span class="clear" onclick="input('c')" tabindex="0" role="button">C</span>
+        <button class="clear" onclick="input('c')" tabindex="0" aria-label="clear screen">C</button>
+        <!-- I have assumed that the value the user is entering in screen area is critical -->
         <div class="screen"></div>
     </div>
 
     <div class="keys">
         <!-- operators and other keys -->
-        <span onclick="input('7')" tabindex="0" role="button">7</span>
-        <span onclick="input('8')" tabindex="0" role="button">8</span>
-        <span onclick="input('9')" tabindex="0" role="button">9</span>
-        <span class="operator" onclick="input('+')" tabindex="0" role="button">+</span>
+        <button onclick="input('8')" tabindex="0" aria-label="calculator key 8">8</button>
+        <button onclick="input('9')" tabindex="0" aria-label="calculator key 9">9</button>
+        <button onclick="input('7')" tabindex="0" aria-label="calculator key 7">7</button>
 
-        <span onclick="input('4')" tabindex="0" role="button">4</span>
-        <span onclick="input('5')" tabindex="0" role="button">5</span>
-        <span onclick="input('6')" tabindex="0" role="button">6</span>
-        <span class="operator" onclick="input('-')" tabindex="0" role="button">-</span>
+        <button class="operator" onclick="input('+')" tabindex="0" aria-label="plus operator">+</button>
 
-        <span onclick="input('1')" tabindex="0" role="button">1</span>
-        <span onclick="input('2')" tabindex="0" role="button">2</span>
-        <span onclick="input('3')" tabindex="0" role="button">3</span>
-        <span class="operator" onclick="input('/')" tabindex="0" role="button">/</span>
+        <button onclick="input('4')" tabindex="0" aria-label="calculator key 4">4</button>
+        <button onclick="input('5')" tabindex="0" aria-label="calculator key 5">5</button>
+        <button onclick="input('6')" tabindex="0" aria-label="calculator key 6">6</button>
 
-        <span onclick="input('0')" tabindex="0" role="button">0</span>
-        <span onclick="input('.')" tabindex="0" role="button">.</span>
-        <span class="eval" onclick="input('=')" tabindex="0" role="button">=</span>
-        <span class="operator" onclick="input('*')" tabindex="0" role="button">*</span>
+        <button class="operator" onclick="input('-')" tabindex="0" aria-label="minus operator">-</button>
+
+        <button onclick="input('1')" tabindex="0" aria-label="calculator key 1">1</button>
+        <button onclick="input('2')" tabindex="0" aria-label="calculator key 2">2</button>
+        <button onclick="input('3')" tabindex="0" aria-label="calculator key 3">3</button>
+
+        <button class="operator" onclick="input('/')" tabindex="0" aria-label="divide operator">/</button>
+
+        <button onclick="input('0')" tabindex="0" aria-label="calculator key 0">0</button>
+
+        <button onclick="input('.')" tabindex="0" aria-label="point key">.</button>
+        <button class="eval" onclick="input('=')" tabindex="0" aria-label="evaluation key">=</button>
+        <button class="operator" onclick="input('*')" tabindex="0" aria-label="cross operator">*</button>
     </div>
 </div>
 
